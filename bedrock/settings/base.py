@@ -90,6 +90,9 @@ def JINJA_CONFIG():
 # and js files that can be bundled together by the minify app.
 MINIFY_BUNDLES = {
     'css': {
+        'csrf-failure': (
+            'css/csrf-failure.less',
+        ),
         'about': (
             'css/mozorg/about.less',
         ),
@@ -706,3 +709,5 @@ FACEBOOK_TAB_URL = lazy(facebook_tab_url_lazy, str)()
 # Prefix for media. No trailing slash.
 # e.g. '//mozorg.cdn.mozilla.net'
 CDN_BASE_URL = ''
+
+CSRF_FAILURE_VIEW = 'bedrock.mozorg.views.csrf_failure'
